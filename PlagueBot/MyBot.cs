@@ -17,8 +17,8 @@ namespace PlagueBot
         Random rand;
 
 
-        string[] freshestMemes = Directory.GetFiles("C:\\Users\\Plague Doctor\\Pictures\\Discord Bot Memes");
-        string[] madisonMemes = Directory.GetFiles("C:\\Users\\Plague Doctor\\Pictures\\Madison Memes");
+        string[] freshestMemes = Directory.GetFiles("C:\\Discord Bot Memes");
+        string[] madisonMemes = Directory.GetFiles("C:\\Madison Memes");
 
 
         public MyBot()
@@ -116,9 +116,7 @@ namespace PlagueBot
             
             RegisterMemeCommand();            
             RegisterDeleteCommand();                        
-            RegisterCommandsCommand();
-            RegisterPrankCommand();
-            RegisterCoreyCommand();
+            RegisterCommandsCommand();            
             RegisterGoogleCommand();
             RegisterRulesCommand();            
             RegisterDecisionCommand();
@@ -166,17 +164,8 @@ namespace PlagueBot
                     string memeToPost = freshestMemes[randomMemeIndex];
                     await e.Channel.SendFile(memeToPost);
                 });
-        }
+        } 
               
-
-        private void RegisterPrankCommand()
-        {
-            commands.CreateCommand("prank")
-                .Do(async (e) =>
-                {                    
-                    await e.Channel.SendFile("C:\\Users\\Plague Doctor\\Pictures\\Discord Bot Memes\\prank.jpg");
-                });
-        }
 
         private void RegisterMadisonCommand()
         {
@@ -215,16 +204,7 @@ namespace PlagueBot
                 {
                     await e.Channel.SendMessage("https://discordapp.com/api/oauth2/authorize?client_id=269765406888165386&scope=bot&permissions=0");
                 });
-        }
-
-        private void RegisterCoreyCommand()
-        {
-            commands.CreateCommand("corey")
-                .Do(async (e) =>
-                {
-                    await e.Channel.SendFile("C:\\Users\\Plague Doctor\\Pictures\\Godzilla.jpg");
-                });
-        }
+        }        
          
         private void RegisterGoogleCommand()
         {
